@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title></title>
+        <script type="text/bootstrap" id="bootstrapped">
+            {! data !}
+        </script>
+
+        <link rel="shortcut icon" href="/favicon.png">
+        <link rel="apple-touch-icon" href="/favicon.png">
+
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- @formatter:off-->
+            <script async type="text/javascript" src="//use.typekit.net/qgy4ulh.js"></script>
+            <script type="text/javascript"> try { Typekit.load(); } catch (e) {} </script>
+        <!-- @formatter:on -->
+
+        <!-- @formatter:off-->
+            <script async src='//www.google-analytics.com/analytics.js'></script>
+            <script type="text/javascript">
+                window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+                ga('create', 'UA-28330141-6', 'auto');
+            </script>
+        <!-- @formatter:on -->
+
+    </head>
+
+    <body ng-controller="App as app">
+
+
+        <h1>Suck it Bitch {{ app.please }}</h1>
+
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
+        <script src="vendor/system.js"></script>
+        <script src="config.js"></script>
+        <script>
+            System.import('app/main')
+                .catch(function (resp) {
+                    console.error("CATCH: " + resp);
+                });
+        </script>
+    </body>
+</html>
+

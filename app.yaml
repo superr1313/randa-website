@@ -1,0 +1,71 @@
+application: randa-website
+version: 0-0-1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+builtins:
+- remote_api: on
+- deferred: on
+- appstats: off
+
+
+handlers:
+
+- url: /favicon.ico
+  static_files:  favicon.ico
+  upload: favicon.ico
+
+- url: /fonts/(.*\.otf)
+  static_files: fonts/\1
+  upload: fonts/(.*\.otf)
+  mime_type: font/opentype
+
+- url: /client/modules/(app|admin|front)/(build|release)/(.*/?.*\.(css|js|png|jpg|jpeg|tif|gif|woff|ttf|svg|json|map|eot|txt|coffee))
+  static_files: client/modules/\1/\2/\3
+  upload: client/modules/(app|admin|front)/(build|release)/(.*/?.*\.(css|js|png|jpg|jpeg|tif|gif|woff|ttf|svg|json|map|eot|txt|coffee))
+
+- url: /(.*/?.*\.(css|js|png|jpg|jpeg|tif|gif|woff|ttf|svg|json|map|eot|txt|ts))
+  static_files: src/main/web/app/\1
+  upload: /(.*/?.*\.(css|js|png|jpg|jpeg|tif|gif|woff|ttf|svg|json|map|eot|txt|ts))
+
+- url: /img
+  static_dir: img
+
+- url: /sys/.*
+  script: main.application
+  login: admin
+  secure: always
+
+- url: /.*
+  script: main.application
+  secure: optional
+
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+- name: jinja2
+  version: "latest"
+- name: PIL
+  version: "latest"
+
+skip_files:
+
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*\.sass
+- ^(.*/)?.*\.sassc
+- ^(.*/)?.*\.scss
+- ^(.*/)?.*\.md
+- ^(.*/)?.*\.tpl\.html
+- ^(.*/)?.*\.spec\.js
+- ^(.*/)?.*\.spec\.coffee
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^client/manage/(vendor/.*)
+- ^client/manage/(karma/.*)
+- ^.*/(node_modules/.*)
+- ^.*/(coverage/.*)
+- ^.*/(tmp/.*)

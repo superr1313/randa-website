@@ -1,0 +1,58 @@
+{
+  "name": "randa-website",
+  "version": "0.0.1",
+  "description": "buy this shiz",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "baseURL": "src/main/web/app",
+    "packages": "src/main/web/app/vendor"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superr1313/randa-website.git"
+  },
+  "author": "moki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/superr1313/randa-website/issues"
+  },
+  "homepage": "https://github.com/superr1313/randa-website#readme",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "broccoli": "^0.16.8",
+    "broccoli-stylus-single": "^0.4.1",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylus": "^2.1.0",
+    "jspm": "^0.16.11",
+    "require-dir": "^0.3.0"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "src/main/web/app",
+      "doc": "docs",
+      "lib": "src/main/web/app/src",
+      "packages": "src/main/web/app/vendor"
+    },
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.4.7",
+      "angular-animate": "github:angular/bower-angular-animate@^1.4.7",
+      "angular-aria": "github:angular/bower-angular-aria@^1.4.7",
+      "angular-material": "github:angular/bower-material@^0.11.2",
+      "css": "github:systemjs/plugin-css@^0.1.18",
+      "font-awesome": "npm:font-awesome@^4.4.0",
+      "jade": "github:johnsoftek/plugin-jade@^0.5.1",
+      "lodash": "npm:lodash@^3.10.1",
+      "ng-right": "npm:ng-right@^0.2.10",
+      "stylus": "npm:stylus@^0.52.4",
+      "ts": "github:frankwallis/plugin-typescript@^2.0.17"
+    },
+    "devDependencies": {
+      "typescript": "npm:typescript@^1.6.2"
+    }
+  }
+}

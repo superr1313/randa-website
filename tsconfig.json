@@ -1,0 +1,24 @@
+{
+    "version": "1.6.2",
+    "compilerOptions": {
+        "suppressImplicitAnyIndexErrors": true,
+        "removeComments": false,
+        "preserveConstEnums": true,
+        "noImplicitAny": false,
+        "experimentalDecorators": true,
+        "module": "system",
+        "target": "es5",
+        "rootDir": ".",
+        "sourceMap": false,
+        "noExternalResolve": true,
+        "compile": false,
+        "noEmit": true
+    },
+    "filesGlob": [
+        "src/main/web/app/src/**/*.ts",
+        "src/main/web/app/typings/**/*.ts",
+        "!**/vendor/lib/**/*.ts",
+        "!node_modules/**/*.ts",
+        "!target/**/*.ts"
+    ]
+}

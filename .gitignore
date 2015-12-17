@@ -1,0 +1,30 @@
+
+# file types
+*.pyc
+*.css
+
+# directories
+.idea/
+build/
+coverage/
+libs/
+release/
+target/
+tmp/
+vendor/
+.coverage
+
+*~
+.DS_Store
+*.swp
+npm-debug.log
+
+.tmp/
+.idea/
+.sass-cache/
+.bower-cache/
+.bower-registry/
+coverage/
+bower_components/
+node_modules/
+jspm_packages/
