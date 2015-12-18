@@ -21,13 +21,18 @@ handlers:
   upload: fonts/(.*\.otf)
   mime_type: font/opentype
 
+- url: /vendor/(.*\.map)
+  static_files: vendor/\1
+  upload: vendor/(.*\.map)
+  mime_type: application/json
+
 - url: /client/modules/(app|admin|front)/(build|release)/(.*/?.*\.(css|js|png|jpg|jpeg|tif|gif|woff|ttf|svg|json|map|eot|txt|coffee))
   static_files: client/modules/\1/\2/\3
   upload: client/modules/(app|admin|front)/(build|release)/(.*/?.*\.(css|js|png|jpg|jpeg|tif|gif|woff|ttf|svg|json|map|eot|txt|coffee))
 
-- url: /(.*/?.*\.(css|js|png|jpg|jpeg|tif|gif|woff|ttf|svg|json|map|eot|txt|ts))
+- url: /(.*/?.*\.(css|js|png|jpg|jpeg|tif|gif|woff|ttf|svg|json|map|eot|txt|ts|tpl.html))
   static_files: src/main/web/app/\1
-  upload: /(.*/?.*\.(css|js|png|jpg|jpeg|tif|gif|woff|ttf|svg|json|map|eot|txt|ts))
+  upload: src/main/web/app/(.*/?.*\.(css|js|png|jpg|jpeg|tif|gif|woff|ttf|svg|json|map|eot|txt|ts|tpl.html))
 
 - url: /img
   static_dir: img
@@ -64,8 +69,6 @@ skip_files:
 - ^(.*/)?.*\.spec\.coffee
 - ^(.*/)?.*/RCS/.*
 - ^(.*/)?\..*
-- ^client/manage/(vendor/.*)
-- ^client/manage/(karma/.*)
-- ^.*/(node_modules/.*)
+- ^(node_modules/.*)
 - ^.*/(coverage/.*)
-- ^.*/(tmp/.*)
+- ^(tmp/.*)
